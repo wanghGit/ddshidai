@@ -22,8 +22,14 @@
     id, name, phone, wechat, password, money_id, createtime, email, address, isAnswer, 
     isValidate, head, birthday, sex, role
   </sql>
-  <select id="queryAll" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="login" resultMap="BaseResultMap">
     select 
+    <include refid="Base_Column_List" />
+    from user
+    where phone=#{0} and password=#{1}
+  </select>
+  <select id="queryAll" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
     <include refid="Base_Column_List" />
     from user
   </select>
