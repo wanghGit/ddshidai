@@ -6,3 +6,4 @@ realdeal.iml
 /bin
 .DS_Store
 .factorypath
+src/main/java/resources/application.properties
