@@ -2,8 +2,6 @@ package com.ddshidai.dao;
 
 import com.ddshidai.model.User;
 
-import java.util.List;
-
 public interface UserMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -16,8 +14,6 @@ public interface UserMapper {
     int updateByPrimaryKeySelective(User record);
 
     int updateByPrimaryKey(User record);
-
-    List<User> queryAll();
-
+    
     User login(String phone, String password);
 }

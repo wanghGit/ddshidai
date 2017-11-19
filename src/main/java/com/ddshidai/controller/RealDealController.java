@@ -25,9 +25,11 @@ public class RealDealController {
     	String id = "";
     	System.out.println(map.get("id")+"//////");
     	if(map.get("id").equals("1")) {
-    		id="2";
-    	}else{
     		id="1";
+    	}else if(map.get("id").equals("2")){
+    		id="2";
+    	}else {
+    		id="3";
     	}
         return userService.selectByPrimaryKey(Integer.parseInt(id));
     }

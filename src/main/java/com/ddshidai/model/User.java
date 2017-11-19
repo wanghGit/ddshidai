@@ -11,23 +11,27 @@ public class User {
 
     private String wechat;
 
+    private String qq;
+
+    private String weibo;
+
     private String password;
 
-    private String moneyId;
+    private Integer moneyId;
 
-    private Date createtime;
+    private Date createTime;
 
     private String email;
 
     private String address;
 
-    private String isanswer;
+    private Byte isAnswer;
 
-    private String isvalidate;
+    private Byte isValidate;
 
     private String head;
 
-    private String birthday;
+    private Date birthday;
 
     private String sex;
 
@@ -65,6 +69,22 @@ public class User {
         this.wechat = wechat == null ? null : wechat.trim();
     }
 
+    public String getQq() {
+        return qq;
+    }
+
+    public void setQq(String qq) {
+        this.qq = qq == null ? null : qq.trim();
+    }
+
+    public String getWeibo() {
+        return weibo;
+    }
+
+    public void setWeibo(String weibo) {
+        this.weibo = weibo == null ? null : weibo.trim();
+    }
+
     public String getPassword() {
         return password;
     }
@@ -73,20 +93,20 @@ public class User {
         this.password = password == null ? null : password.trim();
     }
 
-    public String getMoneyId() {
+    public Integer getMoneyId() {
         return moneyId;
     }
 
-    public void setMoneyId(String moneyId) {
-        this.moneyId = moneyId == null ? null : moneyId.trim();
+    public void setMoneyId(Integer moneyId) {
+        this.moneyId = moneyId;
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
     public String getEmail() {
@@ -105,20 +125,20 @@ public class User {
         this.address = address == null ? null : address.trim();
     }
 
-    public String getIsanswer() {
-        return isanswer;
+    public Byte getIsAnswer() {
+        return isAnswer;
     }
 
-    public void setIsanswer(String isanswer) {
-        this.isanswer = isanswer == null ? null : isanswer.trim();
+    public void setIsAnswer(Byte isAnswer) {
+        this.isAnswer = isAnswer;
     }
 
-    public String getIsvalidate() {
-        return isvalidate;
+    public Byte getIsValidate() {
+        return isValidate;
     }
 
-    public void setIsvalidate(String isvalidate) {
-        this.isvalidate = isvalidate == null ? null : isvalidate.trim();
+    public void setIsValidate(Byte isValidate) {
+        this.isValidate = isValidate;
     }
 
     public String getHead() {
@@ -129,12 +149,12 @@ public class User {
         this.head = head == null ? null : head.trim();
     }
 
-    public String getBirthday() {
+    public Date getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(String birthday) {
-        this.birthday = birthday == null ? null : birthday.trim();
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
     }
 
     public String getSex() {
