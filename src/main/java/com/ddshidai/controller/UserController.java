@@ -32,10 +32,40 @@ public class UserController {
     public
     @ResponseBody
     Object register(@RequestParam Map map) {
-        User user =new User();
+        User user = new User();
         user.setPhone(map.get("phone").toString());
         user.setPassword(ToMd5.md5Password(map.get("password").toString()));
 
         return userService.register(user);
+    }
+
+    @RequestMapping(value = "/updateUserNameAndRole")
+    public
+    @ResponseBody
+    Object updateUserNameAndRole(@RequestParam Map map) {
+        int id = Integer.parseInt(map.get("id").toString());
+        String name = map.get("name").toString();
+        String role = map.get("role").toString();
+
+        User user = userService.selectByPrimaryKey(id);
+        user.setName(name);
+        user.setRole(role);
+
+        return userService.updateByPrimaryKeySelective(user);
+    }
+
+    @RequestMapping(value = "/updateUserPhoneAndEmail")
+    public
+    @ResponseBody
+    Object updateUserPhoneAndEmail(@RequestParam Map map) {
+        int id = Integer.parseInt(map.get("id").toString());
+        String phone = map.get("phone").toString();
+        String email = map.get("email").toString();
+
+        User user = userService.selectByPrimaryKey(id);
+        user.setPhone(phone);
+        user.setEmail(email);
+
+        return userService.updateByPrimaryKeySelective(user);
     }
 }
