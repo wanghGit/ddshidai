@@ -24,7 +24,6 @@
     id, name, phone, wechat, qq, weibo, password, money_id, create_time, email, address, 
     is_answer, is_validate, head, birthday, sex, role
   </sql>
-  
   <select id="login" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

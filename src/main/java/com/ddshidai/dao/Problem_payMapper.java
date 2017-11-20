@@ -13,5 +13,7 @@ public interface Problem_payMapper {
 
     int updateByPrimaryKeySelective(Problem_pay record);
 
+    int updateByPrimaryKeyWithBLOBs(Problem_pay record);
+
     int updateByPrimaryKey(Problem_pay record);
 }

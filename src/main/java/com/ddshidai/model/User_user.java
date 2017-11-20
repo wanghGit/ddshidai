@@ -5,7 +5,7 @@ import java.util.Date;
 public class User_user {
     private Integer id;
 
-    private Integer followedUserIid;
+    private Integer followedUserId;
 
     private Integer userId;
 
@@ -19,12 +19,12 @@ public class User_user {
         this.id = id;
     }
 
-    public Integer getFollowedUserIid() {
-        return followedUserIid;
+    public Integer getFollowedUserId() {
+        return followedUserId;
     }
 
-    public void setFollowedUserIid(Integer followedUserIid) {
-        this.followedUserIid = followedUserIid;
+    public void setFollowedUserId(Integer followedUserId) {
+        this.followedUserId = followedUserId;
     }
 
     public Integer getUserId() {

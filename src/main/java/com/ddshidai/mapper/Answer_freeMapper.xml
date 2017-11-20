@@ -3,14 +3,16 @@
 <mapper namespace="com.ddshidai.dao.Answer_freeMapper" >
   <resultMap id="BaseResultMap" type="com.ddshidai.model.Answer_free" >
     <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="answer_user_id" property="answerUserId" jdbcType="INTEGER" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
     <result column="problem_free_id" property="problemFreeId" jdbcType="INTEGER" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
   </resultMap>
   <resultMap id="ResultMapWithBLOBs" type="com.ddshidai.model.Answer_free" extends="BaseResultMap" >
-    <result column="content" property="content" jdbcType="LONGVARBINARY" />
+    <result column="content" property="content" jdbcType="LONGVARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, problem_free_id, create_time
+    id, answer_user_id, title, problem_free_id, create_time
   </sql>
   <sql id="Blob_Column_List" >
     content
@@ -28,16 +30,24 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.ddshidai.model.Answer_free" >
-    insert into answer_free (id, problem_free_id, create_time, 
-      content)
-    values (#{id,jdbcType=INTEGER}, #{problemFreeId,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{content,jdbcType=LONGVARBINARY})
+    insert into answer_free (id, answer_user_id, title, 
+      problem_free_id, create_time, content
+      )
+    values (#{id,jdbcType=INTEGER}, #{answerUserId,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, 
+      #{problemFreeId,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{content,jdbcType=LONGVARCHAR}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.ddshidai.model.Answer_free" >
     insert into answer_free
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         id,
+      </if>
+      <if test="answerUserId != null" >
+        answer_user_id,
+      </if>
+      <if test="title != null" >
+        title,
       </if>
       <if test="problemFreeId != null" >
         problem_free_id,
@@ -53,6 +63,12 @@
       <if test="id != null" >
         #{id,jdbcType=INTEGER},
       </if>
+      <if test="answerUserId != null" >
+        #{answerUserId,jdbcType=INTEGER},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=VARCHAR},
+      </if>
       <if test="problemFreeId != null" >
         #{problemFreeId,jdbcType=INTEGER},
       </if>
@@ -60,13 +76,19 @@
         #{createTime,jdbcType=TIMESTAMP},
       </if>
       <if test="content != null" >
-        #{content,jdbcType=LONGVARBINARY},
+        #{content,jdbcType=LONGVARCHAR},
       </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.ddshidai.model.Answer_free" >
     update answer_free
     <set >
+      <if test="answerUserId != null" >
+        answer_user_id = #{answerUserId,jdbcType=INTEGER},
+      </if>
+      <if test="title != null" >
+        title = #{title,jdbcType=VARCHAR},
+      </if>
       <if test="problemFreeId != null" >
         problem_free_id = #{problemFreeId,jdbcType=INTEGER},
       </if>
@@ -74,21 +96,25 @@
         create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
       <if test="content != null" >
-        content = #{content,jdbcType=LONGVARBINARY},
+        content = #{content,jdbcType=LONGVARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.ddshidai.model.Answer_free" >
     update answer_free
-    set problem_free_id = #{problemFreeId,jdbcType=INTEGER},
+    set answer_user_id = #{answerUserId,jdbcType=INTEGER},
+      title = #{title,jdbcType=VARCHAR},
+      problem_free_id = #{problemFreeId,jdbcType=INTEGER},
       create_time = #{createTime,jdbcType=TIMESTAMP},
-      content = #{content,jdbcType=LONGVARBINARY}
+      content = #{content,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.ddshidai.model.Answer_free" >
     update answer_free
-    set problem_free_id = #{problemFreeId,jdbcType=INTEGER},
+    set answer_user_id = #{answerUserId,jdbcType=INTEGER},
+      title = #{title,jdbcType=VARCHAR},
+      problem_free_id = #{problemFreeId,jdbcType=INTEGER},
       create_time = #{createTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>

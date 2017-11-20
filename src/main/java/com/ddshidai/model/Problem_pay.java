@@ -5,13 +5,17 @@ import java.util.Date;
 public class Problem_pay {
     private Integer id;
 
-    private String content;
+    private String status;
+
+    private Integer answerCount;
 
     private Double money;
 
-    private Integer answerUserId;
+    private Integer userId;
 
     private Date createTime;
+
+    private String content;
 
     public Integer getId() {
         return id;
@@ -21,12 +25,20 @@ public class Problem_pay {
         this.id = id;
     }
 
-    public String getContent() {
-        return content;
+    public String getStatus() {
+        return status;
     }
 
-    public void setContent(String content) {
-        this.content = content == null ? null : content.trim();
+    public void setStatus(String status) {
+        this.status = status == null ? null : status.trim();
+    }
+
+    public Integer getAnswerCount() {
+        return answerCount;
+    }
+
+    public void setAnswerCount(Integer answerCount) {
+        this.answerCount = answerCount;
     }
 
     public Double getMoney() {
@@ -37,12 +49,12 @@ public class Problem_pay {
         this.money = money;
     }
 
-    public Integer getAnswerUserId() {
-        return answerUserId;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setAnswerUserId(Integer answerUserId) {
-        this.answerUserId = answerUserId;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public Date getCreateTime() {
@@ -51,5 +63,13 @@ public class Problem_pay {
 
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content == null ? null : content.trim();
     }
 }

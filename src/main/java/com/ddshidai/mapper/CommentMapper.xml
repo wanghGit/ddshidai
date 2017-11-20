@@ -9,7 +9,7 @@
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
   </resultMap>
   <resultMap id="ResultMapWithBLOBs" type="com.ddshidai.model.Comment" extends="BaseResultMap" >
-    <result column="content" property="content" jdbcType="LONGVARBINARY" />
+    <result column="content" property="content" jdbcType="LONGVARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
     id, problem_free_id, user_id, read_num, create_time
@@ -34,7 +34,7 @@
       read_num, create_time, content
       )
     values (#{id,jdbcType=INTEGER}, #{problemFreeId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, 
-      #{readNum,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{content,jdbcType=LONGVARBINARY}
+      #{readNum,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{content,jdbcType=LONGVARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.ddshidai.model.Comment" >
@@ -76,7 +76,7 @@
         #{createTime,jdbcType=TIMESTAMP},
       </if>
       <if test="content != null" >
-        #{content,jdbcType=LONGVARBINARY},
+        #{content,jdbcType=LONGVARCHAR},
       </if>
     </trim>
   </insert>
@@ -96,7 +96,7 @@
         create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
       <if test="content != null" >
-        content = #{content,jdbcType=LONGVARBINARY},
+        content = #{content,jdbcType=LONGVARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -107,7 +107,7 @@
       user_id = #{userId,jdbcType=INTEGER},
       read_num = #{readNum,jdbcType=INTEGER},
       create_time = #{createTime,jdbcType=TIMESTAMP},
-      content = #{content,jdbcType=LONGVARBINARY}
+      content = #{content,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.ddshidai.model.Comment" >

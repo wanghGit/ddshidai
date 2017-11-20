@@ -5,11 +5,15 @@ import java.util.Date;
 public class Problem_free {
     private Integer id;
 
+    private Integer userId;
+
     private Integer probelmTypeId;
+
+    private String title;
 
     private Date createTime;
 
-    private byte[] content;
+    private String content;
 
     public Integer getId() {
         return id;
@@ -17,6 +21,14 @@ public class Problem_free {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public Integer getProbelmTypeId() {
@@ -27,6 +39,14 @@ public class Problem_free {
         this.probelmTypeId = probelmTypeId;
     }
 
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title == null ? null : title.trim();
+    }
+
     public Date getCreateTime() {
         return createTime;
     }
@@ -35,11 +55,11 @@ public class Problem_free {
         this.createTime = createTime;
     }
 
-    public byte[] getContent() {
+    public String getContent() {
         return content;
     }
 
-    public void setContent(byte[] content) {
-        this.content = content;
+    public void setContent(String content) {
+        this.content = content == null ? null : content.trim();
     }
 }

@@ -5,11 +5,15 @@ import java.util.Date;
 public class Comment_child {
     private Integer id;
 
-    private Integer problemFreeId;
+    private Integer commentId;
+
+    private Integer userId;
+
+    private Integer readNum;
 
     private Date createTime;
 
-    private byte[] content;
+    private String content;
 
     public Integer getId() {
         return id;
@@ -19,12 +23,28 @@ public class Comment_child {
         this.id = id;
     }
 
-    public Integer getProblemFreeId() {
-        return problemFreeId;
+    public Integer getCommentId() {
+        return commentId;
     }
 
-    public void setProblemFreeId(Integer problemFreeId) {
-        this.problemFreeId = problemFreeId;
+    public void setCommentId(Integer commentId) {
+        this.commentId = commentId;
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
+    public Integer getReadNum() {
+        return readNum;
+    }
+
+    public void setReadNum(Integer readNum) {
+        this.readNum = readNum;
     }
 
     public Date getCreateTime() {
@@ -35,11 +55,11 @@ public class Comment_child {
         this.createTime = createTime;
     }
 
-    public byte[] getContent() {
+    public String getContent() {
         return content;
     }
 
-    public void setContent(byte[] content) {
-        this.content = content;
+    public void setContent(String content) {
+        this.content = content == null ? null : content.trim();
     }
 }

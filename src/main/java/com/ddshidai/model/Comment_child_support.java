@@ -5,7 +5,7 @@ import java.util.Date;
 public class Comment_child_support {
     private Integer id;
 
-    private Integer childCommentId;
+    private Integer commentChildId;
 
     private Integer userId;
 
@@ -19,12 +19,12 @@ public class Comment_child_support {
         this.id = id;
     }
 
-    public Integer getChildCommentId() {
-        return childCommentId;
+    public Integer getCommentChildId() {
+        return commentChildId;
     }
 
-    public void setChildCommentId(Integer childCommentId) {
-        this.childCommentId = childCommentId;
+    public void setCommentChildId(Integer commentChildId) {
+        this.commentChildId = commentChildId;
     }
 
     public Integer getUserId() {

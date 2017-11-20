@@ -4,11 +4,11 @@
   <resultMap id="BaseResultMap" type="com.ddshidai.model.Support_user" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="user_id" property="userId" jdbcType="INTEGER" />
-    <result column="support_user_id" property="supportUserId" jdbcType="INTEGER" />
+    <result column="supported_user_id" property="supportedUserId" jdbcType="INTEGER" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, user_id, support_user_id, create_time
+    id, user_id, supported_user_id, create_time
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
@@ -21,9 +21,9 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.ddshidai.model.Support_user" >
-    insert into support_user (id, user_id, support_user_id, 
+    insert into support_user (id, user_id, supported_user_id, 
       create_time)
-    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{supportUserId,jdbcType=INTEGER}, 
+    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{supportedUserId,jdbcType=INTEGER}, 
       #{createTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.ddshidai.model.Support_user" >
@@ -35,8 +35,8 @@
       <if test="userId != null" >
         user_id,
       </if>
-      <if test="supportUserId != null" >
-        support_user_id,
+      <if test="supportedUserId != null" >
+        supported_user_id,
       </if>
       <if test="createTime != null" >
         create_time,
@@ -49,8 +49,8 @@
       <if test="userId != null" >
         #{userId,jdbcType=INTEGER},
       </if>
-      <if test="supportUserId != null" >
-        #{supportUserId,jdbcType=INTEGER},
+      <if test="supportedUserId != null" >
+        #{supportedUserId,jdbcType=INTEGER},
       </if>
       <if test="createTime != null" >
         #{createTime,jdbcType=TIMESTAMP},
@@ -63,8 +63,8 @@
       <if test="userId != null" >
         user_id = #{userId,jdbcType=INTEGER},
       </if>
-      <if test="supportUserId != null" >
-        support_user_id = #{supportUserId,jdbcType=INTEGER},
+      <if test="supportedUserId != null" >
+        supported_user_id = #{supportedUserId,jdbcType=INTEGER},
       </if>
       <if test="createTime != null" >
         create_time = #{createTime,jdbcType=TIMESTAMP},
@@ -75,7 +75,7 @@
   <update id="updateByPrimaryKey" parameterType="com.ddshidai.model.Support_user" >
     update support_user
     set user_id = #{userId,jdbcType=INTEGER},
-      support_user_id = #{supportUserId,jdbcType=INTEGER},
+      supported_user_id = #{supportedUserId,jdbcType=INTEGER},
       create_time = #{createTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>

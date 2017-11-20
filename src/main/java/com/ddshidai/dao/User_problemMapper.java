@@ -13,7 +13,5 @@ public interface User_problemMapper {
 
     int updateByPrimaryKeySelective(User_problem record);
 
-    int updateByPrimaryKeyWithBLOBs(User_problem record);
-
     int updateByPrimaryKey(User_problem record);
 }

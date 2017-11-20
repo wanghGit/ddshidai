@@ -7,7 +7,7 @@ public class Support_user {
 
     private Integer userId;
 
-    private Integer supportUserId;
+    private Integer supportedUserId;
 
     private Date createTime;
 
@@ -27,12 +27,12 @@ public class Support_user {
         this.userId = userId;
     }
 
-    public Integer getSupportUserId() {
-        return supportUserId;
+    public Integer getSupportedUserId() {
+        return supportedUserId;
     }
 
-    public void setSupportUserId(Integer supportUserId) {
-        this.supportUserId = supportUserId;
+    public void setSupportedUserId(Integer supportedUserId) {
+        this.supportedUserId = supportedUserId;
     }
 
     public Date getCreateTime() {

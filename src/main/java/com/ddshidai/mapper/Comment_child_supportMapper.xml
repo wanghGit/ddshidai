@@ -3,12 +3,12 @@
 <mapper namespace="com.ddshidai.dao.Comment_child_supportMapper" >
   <resultMap id="BaseResultMap" type="com.ddshidai.model.Comment_child_support" >
     <id column="id" property="id" jdbcType="INTEGER" />
-    <result column="child_comment_id" property="childCommentId" jdbcType="INTEGER" />
+    <result column="comment_child_id" property="commentChildId" jdbcType="INTEGER" />
     <result column="user_id" property="userId" jdbcType="INTEGER" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, child_comment_id, user_id, create_time
+    id, comment_child_id, user_id, create_time
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
@@ -21,9 +21,9 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.ddshidai.model.Comment_child_support" >
-    insert into comment_child_support (id, child_comment_id, user_id, 
+    insert into comment_child_support (id, comment_child_id, user_id, 
       create_time)
-    values (#{id,jdbcType=INTEGER}, #{childCommentId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, 
+    values (#{id,jdbcType=INTEGER}, #{commentChildId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, 
       #{createTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.ddshidai.model.Comment_child_support" >
@@ -32,8 +32,8 @@
       <if test="id != null" >
         id,
       </if>
-      <if test="childCommentId != null" >
-        child_comment_id,
+      <if test="commentChildId != null" >
+        comment_child_id,
       </if>
       <if test="userId != null" >
         user_id,
@@ -46,8 +46,8 @@
       <if test="id != null" >
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="childCommentId != null" >
-        #{childCommentId,jdbcType=INTEGER},
+      <if test="commentChildId != null" >
+        #{commentChildId,jdbcType=INTEGER},
       </if>
       <if test="userId != null" >
         #{userId,jdbcType=INTEGER},
@@ -60,8 +60,8 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.ddshidai.model.Comment_child_support" >
     update comment_child_support
     <set >
-      <if test="childCommentId != null" >
-        child_comment_id = #{childCommentId,jdbcType=INTEGER},
+      <if test="commentChildId != null" >
+        comment_child_id = #{commentChildId,jdbcType=INTEGER},
       </if>
       <if test="userId != null" >
         user_id = #{userId,jdbcType=INTEGER},
@@ -74,7 +74,7 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.ddshidai.model.Comment_child_support" >
     update comment_child_support
-    set child_comment_id = #{childCommentId,jdbcType=INTEGER},
+    set comment_child_id = #{commentChildId,jdbcType=INTEGER},
       user_id = #{userId,jdbcType=INTEGER},
       create_time = #{createTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}

@@ -13,7 +13,7 @@ public class Comment {
 
     private Date createTime;
 
-    private byte[] content;
+    private String content;
 
     public Integer getId() {
         return id;
@@ -55,11 +55,11 @@ public class Comment {
         this.createTime = createTime;
     }
 
-    public byte[] getContent() {
+    public String getContent() {
         return content;
     }
 
-    public void setContent(byte[] content) {
-        this.content = content;
+    public void setContent(String content) {
+        this.content = content == null ? null : content.trim();
     }
 }
