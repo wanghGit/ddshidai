@@ -7,3 +7,6 @@ realdeal.iml
 .DS_Store
 .factorypath
 src/main/java/resources/application.properties
+.classpath
+.gitignore.bak
+.project
