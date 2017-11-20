@@ -19,10 +19,11 @@
     <result column="birthday" property="birthday" jdbcType="DATE" />
     <result column="sex" property="sex" jdbcType="VARCHAR" />
     <result column="role" property="role" jdbcType="VARCHAR" />
+    <result column="price" property="price" jdbcType="DOUBLE" />
   </resultMap>
   <sql id="Base_Column_List" >
     id, name, phone, wechat, qq, weibo, password, money_id, create_time, email, address, 
-    is_answer, is_validate, head, birthday, sex, role
+    is_answer, is_validate, head, birthday, sex, role, price
   </sql>
   <select id="login" resultMap="BaseResultMap">
     select 
@@ -30,6 +31,7 @@
     from user
     where phone=#{0} and password=#{1}
   </select>
+  
   
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
@@ -47,13 +49,13 @@
       password, money_id, create_time, 
       email, address, is_answer, 
       is_validate, head, birthday, 
-      sex, role)
+      sex, role, price)
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
       #{wechat,jdbcType=VARCHAR}, #{qq,jdbcType=VARCHAR}, #{weibo,jdbcType=VARCHAR}, 
       #{password,jdbcType=VARCHAR}, #{moneyId,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
       #{email,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{isAnswer,jdbcType=TINYINT}, 
       #{isValidate,jdbcType=TINYINT}, #{head,jdbcType=VARCHAR}, #{birthday,jdbcType=DATE}, 
-      #{sex,jdbcType=VARCHAR}, #{role,jdbcType=VARCHAR})
+      #{sex,jdbcType=VARCHAR}, #{role,jdbcType=VARCHAR}, #{price,jdbcType=DOUBLE})
   </insert>
   <insert id="insertSelective" parameterType="com.ddshidai.model.User" >
     insert into user
@@ -109,6 +111,9 @@
       <if test="role != null" >
         role,
       </if>
+      <if test="price != null" >
+        price,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -161,6 +166,9 @@
       </if>
       <if test="role != null" >
         #{role,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null" >
+        #{price,jdbcType=DOUBLE},
       </if>
     </trim>
   </insert>
@@ -215,6 +223,9 @@
       <if test="role != null" >
         role = #{role,jdbcType=VARCHAR},
       </if>
+      <if test="price != null" >
+        price = #{price,jdbcType=DOUBLE},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -235,7 +246,8 @@
       head = #{head,jdbcType=VARCHAR},
       birthday = #{birthday,jdbcType=DATE},
       sex = #{sex,jdbcType=VARCHAR},
-      role = #{role,jdbcType=VARCHAR}
+      role = #{role,jdbcType=VARCHAR},
+      price = #{price,jdbcType=DOUBLE}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

@@ -37,6 +37,8 @@ public class User {
 
     private String role;
 
+    private Double price;
+
     public Integer getId() {
         return id;
     }
@@ -171,5 +173,13 @@ public class User {
 
     public void setRole(String role) {
         this.role = role == null ? null : role.trim();
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
     }
 }
