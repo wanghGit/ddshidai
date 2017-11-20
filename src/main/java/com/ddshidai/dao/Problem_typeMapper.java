@@ -2,6 +2,8 @@ package com.ddshidai.dao;
 
 import com.ddshidai.model.Problem_type;
 
+import java.util.List;
+
 public interface Problem_typeMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -14,4 +16,6 @@ public interface Problem_typeMapper {
     int updateByPrimaryKeySelective(Problem_type record);
 
     int updateByPrimaryKey(Problem_type record);
+
+    List<Problem_type> getAllProblemType();
 }
