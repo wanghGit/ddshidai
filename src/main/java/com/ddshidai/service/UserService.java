@@ -18,8 +18,6 @@ public class UserService {
         return userMapper.selectByPrimaryKey(id);
     }
 
-    ;
-
     public Object queryAll(int id) {
         return userMapper.selectByPrimaryKey(id);
     }
@@ -30,5 +28,9 @@ public class UserService {
 
     public int register(User user) {
         return userMapper.insertSelective(user);
+    }
+
+    public int updateByPrimaryKeySelective(User user) {
+        return userMapper.updateByPrimaryKeySelective(user);
     }
 }
