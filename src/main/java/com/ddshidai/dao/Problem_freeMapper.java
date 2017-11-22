@@ -2,6 +2,8 @@ package com.ddshidai.dao;
 
 import com.ddshidai.model.Problem_free;
 
+import java.util.List;
+
 public interface Problem_freeMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -16,4 +18,6 @@ public interface Problem_freeMapper {
     int updateByPrimaryKeyWithBLOBs(Problem_free record);
 
     int updateByPrimaryKey(Problem_free record);
+
+    List<Problem_free> getAllProblem();
 }
