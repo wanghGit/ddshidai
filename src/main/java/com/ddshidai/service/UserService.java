@@ -9,28 +9,15 @@ import com.ddshidai.model.User;
 /**
  * @author wangheng
  */
-@Service
-public class UserService {
-    @Autowired
-    UserMapper userMapper;
+public interface UserService {
 
-    public User selectByPrimaryKey(int id) {
-        return userMapper.selectByPrimaryKey(id);
-    }
+    public User selectByPrimaryKey(int id);
 
-    public Object queryAll(int id) {
-        return userMapper.selectByPrimaryKey(id);
-    }
+    public Object queryAll(int id);
 
-    public User login(String phone, String password) {
-        return userMapper.login(phone, password);
-    }
+    public User login(String phone, String password);
 
-    public int register(User user) {
-        return userMapper.insertSelective(user);
-    }
+    public int register(User user);
 
-    public int updateByPrimaryKeySelective(User user) {
-        return userMapper.updateByPrimaryKeySelective(user);
-    }
+    public int updateByPrimaryKeySelective(User user);
 }
