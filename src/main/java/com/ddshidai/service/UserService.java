@@ -6,9 +6,12 @@ import org.springframework.stereotype.Service;
 import com.ddshidai.dao.UserMapper;
 import com.ddshidai.model.User;
 
+import java.util.List;
+
 /**
  * @author wangheng
  */
+
 public interface UserService {
 
     public User selectByPrimaryKey(int id);
@@ -20,4 +23,5 @@ public interface UserService {
     public int register(User user);
 
     public int updateByPrimaryKeySelective(User user);
+
 }
