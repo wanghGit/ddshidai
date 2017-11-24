@@ -11,32 +11,17 @@ import java.util.List;
 /**
  * @author wangheng
  */
-@Service
-public class UserService {
-    @Autowired
-    UserMapper userMapper;
 
-    public User selectByPrimaryKey(int id) {
-        return userMapper.selectByPrimaryKey(id);
-    }
+public interface UserService {
 
-    public Object queryAll(int id) {
-        return userMapper.selectByPrimaryKey(id);
-    }
+    public User selectByPrimaryKey(int id);
 
-    public User login(String phone, String password) {
-        return userMapper.login(phone, password);
-    }
+    public Object queryAll(int id);
 
-    public int register(User user) {
-        return userMapper.insertSelective(user);
-    }
+    public User login(String phone, String password);
 
-    public int updateByPrimaryKeySelective(User user) {
-        return userMapper.updateByPrimaryKeySelective(user);
-    }
+    public int register(User user);
 
-    public List<User> getRecommendedUser() {
-        return userMapper.getRecommendedUser();
-    }
+    public int updateByPrimaryKeySelective(User user);
+
 }
