@@ -7,6 +7,8 @@ import com.ddshidai.dao.UserMapper;
 import com.ddshidai.model.User;
 import com.ddshidai.service.UserService;
 
+import java.util.List;
+
 /**
  * @author wangheng
  */
@@ -33,5 +35,10 @@ public class UserServiceImpl implements UserService {
 
     public int updateByPrimaryKeySelective(User user) {
         return userMapper.updateByPrimaryKeySelective(user);
+    }
+
+    @Override
+    public List<User> getRecommendedUser() {
+        return userMapper.getRecommendedUser();
     }
 }
