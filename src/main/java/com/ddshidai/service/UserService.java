@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 import com.ddshidai.dao.UserMapper;
 import com.ddshidai.model.User;
 
+import java.util.List;
+
 /**
  * @author wangheng
  */
@@ -32,5 +34,9 @@ public class UserService {
 
     public int updateByPrimaryKeySelective(User user) {
         return userMapper.updateByPrimaryKeySelective(user);
+    }
+
+    public List<User> getRecommendedUser() {
+        return userMapper.getRecommendedUser();
     }
 }
