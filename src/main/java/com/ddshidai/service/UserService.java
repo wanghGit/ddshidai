@@ -14,14 +14,15 @@ import java.util.List;
 
 public interface UserService {
 
-    public User selectByPrimaryKey(int id);
+    User selectByPrimaryKey(int id);
 
-    public Object queryAll(int id);
+    Object queryAll(int id);
 
-    public User login(String phone, String password);
+    User login(String phone, String password);
 
-    public int register(User user);
+    int register(User user);
 
-    public int updateByPrimaryKeySelective(User user);
+    int updateByPrimaryKeySelective(User user);
 
+    List<User> getRecommendedUser();
 }

@@ -2,11 +2,8 @@ package com.ddshidai.controller;
 
 import com.ddshidai.model.Problem_free;
 import com.ddshidai.model.Problem_type;
-import com.ddshidai.model.User;
 import com.ddshidai.service.ProblemFreeService;
-import com.ddshidai.service.ProblemService;
-import com.ddshidai.service.UserService;
-import com.ddshidai.utils.ToMd5;
+import com.ddshidai.service.ProblemTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -24,7 +21,7 @@ import java.util.Map;
 public class ProblemController {
 
     @Autowired
-    ProblemService problemService;
+    ProblemTypeService problemTypeService;
     @Autowired
     ProblemFreeService problemFreeService;
 
@@ -32,7 +29,7 @@ public class ProblemController {
     public
     @ResponseBody
     Object getAllProblemType(@RequestParam Map map) {
-        List<Problem_type> problem_typeList = problemService.getAllProblemType();
+        List<Problem_type> problem_typeList = problemTypeService.getAllProblemType();
         return problem_typeList;
     }
 
